@@ -7,3 +7,4 @@ Color primaryTextColor = Color(0XFFffffff);
 Color secondaryTextColor = Color(0XFF656365); //grey
 Color darkBackgroundColor = Color(0XFF181617);
 Color iconBackgroundColor = Color(0XFF434143);
+Color playBtnBackgroundColor = Color(0XFF3a74fc);
