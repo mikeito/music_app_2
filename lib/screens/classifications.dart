@@ -36,10 +36,10 @@ class Classifications extends StatelessWidget {
           body: TabBarView(
             children: [
               SongsWidget(),
-              Icon(Icons.directions_transit),
-              Icon(Icons.directions_bike),
-              Icon(Icons.directions_bike),
-              Icon(Icons.directions_bike),
+              Icon(Icons.directions_transit, color: primaryTextColor,),
+              Icon(Icons.directions_bike, color: primaryTextColor,),
+              Icon(Icons.directions_bike, color: primaryTextColor,),
+              Icon(Icons.directions_bike, color: primaryTextColor,),
             ],
           ),
         ),

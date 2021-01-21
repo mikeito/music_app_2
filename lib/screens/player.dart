@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:music_player_app/styleguides/colors.dart';
 import 'package:music_player_app/styleguides/text_styles.dart';
@@ -82,20 +84,48 @@ class _PlayerState extends State<Player> {
               width: screenSize.width,
               child: Column(
                 children: [
+                  // Transform(
+                  //   transform: Matrix4.identity()
+                  //     ..setEntry(3, 2, 0.001)
+                  //     ..rotateY(pi * (0 / 8)),
+                  //   alignment: FractionalOffset.center,
+                  //   child: ClipRRect(
+                  //     borderRadius: BorderRadius.circular(12.0),
+                  //     child: Image.asset(ayaNak, height: 230.0,),
+                  //   ),
+                  // ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12.0),
                     child: Image.asset(ayaNak, height: 230.0,),
                   ),
-                  SizedBox(height: 20.0,),
-                  Text("Pookie", style: playerTextStyle_1,),
+                  SizedBox(height: 25.0,),
+                  Text("Pookie", style: primarySongTextStyle,),
+                  SizedBox(height: 7.0,),
                   Text("Aya Nakamura", style: secondarySongTextStyle,),
                 ],
               ),
             ),
+            SizedBox(height: 7.0,),
             // slider section
             Column(
               children: [
-                Slider(value: 4, min: 0, max: 4, onChanged: null),
+                SliderTheme(
+                  data: SliderTheme.of(context).copyWith(
+                    activeTrackColor: Colors.red,
+                    inactiveTrackColor: Colors.black,
+                    trackHeight: 3.0,
+                    thumbColor: Colors.yellow,
+                    thumbShape: RoundSliderThumbShape(enabledThumbRadius: 8.0,),
+                    overlayColor: Colors.purple.withAlpha(32),
+                    overlayShape: RoundSliderOverlayShape(overlayRadius: 14.0),
+                  ),
+                  child: Slider(
+                      value: 2,
+                      min: 0,
+                      max: 4,
+                      onChanged: null
+                  ),
+                ),
                 Container(
                   // width: 290.0,
                   margin: EdgeInsets.symmetric(horizontal: 22.0),
@@ -140,7 +170,7 @@ class _PlayerState extends State<Player> {
                       ),
                       Ink(
                         decoration: const ShapeDecoration(
-                          color: Colors.purple,
+                          color: Color(0XFF3a74fc),
                           shape: CircleBorder(),
                         ),
                         child: IconButton(
@@ -173,17 +203,17 @@ class _PlayerState extends State<Player> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 24.0,),
+                  SizedBox(height: 30.0,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
                         Icons.bluetooth,
-                        color: Colors.green,
+                        color: secondaryTextColor,
                         size: 18.0,
                       ),
                       SizedBox(width: 5.0,),
-                      Text("Airpod Pro", style: playerTinyTextStyle,)
+                      Text("Airpod Pro", style: secondarySongTextStyle,)
                     ],
                   ),
                 ],
@@ -192,7 +222,7 @@ class _PlayerState extends State<Player> {
             GestureDetector(
               onTap: () {},
               child: Container(
-                margin: EdgeInsets.only(top: 24.0),
+                margin: EdgeInsets.only(top: 30.0),
                 padding: EdgeInsets.all(7.0),
                 height: 60.0,
                 width: screenSize.width *0.9,

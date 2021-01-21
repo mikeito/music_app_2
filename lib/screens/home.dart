@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
         ),
         actions: [
           Container(
-            margin: EdgeInsets.only(top: 4.0, right: 12.0),
+            margin: EdgeInsets.only(top: 5.0, right: 12.0, bottom: 7.0),
             decoration: BoxDecoration(
               color: iconBackgroundColor,
               shape: BoxShape.circle,
@@ -58,7 +58,7 @@ class Home extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(18.0, 24.0, 0.0, 10.0),
+              padding: const EdgeInsets.fromLTRB(18.0, 24.0, 0.0, 20.0),
               child: Text(
                 'Recently Played',
                 textAlign: TextAlign.left,
@@ -66,15 +66,15 @@ class Home extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: 14.0),
+              margin: EdgeInsets.only(left: 14.0, bottom: 50.0),
               height: 200,
-              color: Colors.green,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 7,
                 itemBuilder: (BuildContext context, int index) {
                   return Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         height: 160.0,
@@ -97,7 +97,7 @@ class Home extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(18.0, 24.0, 0.0, 10.0),
+              padding: const EdgeInsets.fromLTRB(18.0, 0.0, 0.0, 20.0),
               child: Text(
                   'Your Favorite Artists',
                   textAlign: TextAlign.left,
