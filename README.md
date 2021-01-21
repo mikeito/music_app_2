@@ -1,6 +1,8 @@
 # music_player_app
 
-A new Flutter application.
+A Flutter application for a music player.
+
+![UI](https://github.com/mikeito/music_app_2/blob/main/music_ui.png)
 
 ## Getting Started
 
